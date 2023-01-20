@@ -15,3 +15,14 @@ app.listen(port, ()=>{
     });
     console.log(`Server is running on ${port}.`);
 });
+
+/*
+If you have the same error after npm install =>
+const utf8Encoder = new TextEncoder();
+                    ^
+ReferenceError: TextEncoder is not defined
+
+locate this file node_modules/whatwg-url/dist/encoding.js or .../lib/encoding.js
+
+add this line at top const { TextEncoder, TextDecoder } = require("util");
+ */
